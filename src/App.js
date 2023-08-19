@@ -11,8 +11,8 @@ function App() {
     <div className={!isMobile ? "flex" : ""}>
       <Sidebar isMobile={isMobile} />
       <Routes>
-        <Route path="/" element={<ContactPage isMobile={isMobile} />} />
-        <Route path="/chartmap" element={<ChartAndMap />} />
+        <Route path="/assignment" element={<ContactPage isMobile={isMobile} />} />
+        <Route path="/assignment/chartmap" element={<ChartAndMap />} />
       </Routes>
     </div>
   );

@@ -11,8 +11,8 @@ import {
 const Sidebar = ({ isMobile }) => {
   const [open, setOpen] = useState(true);
   const Menus = [
-    { title: "Contact", icon: <FiUser />, to: "/" },
-    { title: "Chart and Map", icon: <FiBarChart2 />, to: "/chartmap" },
+    { title: "Contact", icon: <FiUser />, to: "/assignment" },
+    { title: "Chart and Map", icon: <FiBarChart2 />, to: "/assignment/chartmap" },
   ];
 
   const toggleSidebar = () => {
@@ -59,11 +59,11 @@ const Sidebar = ({ isMobile }) => {
         </div>
       ) : (
         <div className="bg-blue-600 p-4 flex justify-start">
-          <Link to="/" className="text-white p-2 hover:bg-blue-700">
+          <Link to="/assignment" className="text-white p-2 hover:bg-blue-700">
             <FiUser className="mr-2 text-xl" />
             Contact
           </Link>
-          <Link to="/chartmap" className="text-white p-2 hover:bg-blue-700">
+          <Link to="/assignment/chartmap" className="text-white p-2 hover:bg-blue-700">
             <FiMap className="mr-2 text-xl" />
             Chart and Map
           </Link>
