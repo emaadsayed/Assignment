@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Sidebar from "./components/sidebar";
+import ContactPage from "./components/contactPage";
+import ChartAndMap from "./components/chartAndMap";
+import useMedia from "use-media";
 
 function App() {
+  const isMobile = useMedia({ maxWidth: 912 });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={!isMobile ? "flex" : ""}>
+      <Sidebar isMobile={isMobile} />
+      <Routes>
+        <Route path="/" element={<ContactPage isMobile={isMobile} />} />
+        <Route path="/chartmap" element={<ChartAndMap />} />
+      </Routes>
     </div>
   );
 }
